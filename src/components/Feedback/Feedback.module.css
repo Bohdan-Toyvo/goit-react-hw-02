@@ -1,0 +1,8 @@
+.feedback {
+  list-style: none;
+  text-align: left;
+}
+.item {
+  margin-bottom: 5px;
+  font-size: 1.1em;
+}
