@@ -8,7 +8,7 @@ import css from './App.module.css';
 
 export default function App() {
   const [feedback, setFeedback] = useState(() => {
-    const savedFeedback = window.localStorage.getItem('feedback');
+    const savedFeedback = localStorage.getItem('savedFeedback');
 
     if (savedFeedback !== null) {
       return JSON.parse(savedFeedback);
@@ -21,9 +21,8 @@ export default function App() {
   });
 
   useEffect(() => {
-    window.localStorage.setItem('feedback', JSON.stringify(feedback)),
-      [feedback];
-  });
+    localStorage.setItem('savedFeedback', JSON.stringify(feedback));
+  }, [feedback]);
 
   const updateFeedback = (feedbackType) => {
     setFeedback({
